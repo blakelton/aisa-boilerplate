@@ -1,7 +1,6 @@
 ---
 name: generate-report
 description: Generate comprehensive system status report
-args: [optional: report-type - full, summary, security, performance]
 ---
 
 # System Report Generator

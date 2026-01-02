@@ -1,7 +1,6 @@
 ---
 name: optimize-service
 description: Optimize service configuration and performance
-args: <service-name>
 ---
 
 # Service Optimization

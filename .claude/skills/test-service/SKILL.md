@@ -1,7 +1,6 @@
 ---
 name: test-service
 description: Test service functionality and health
-args: <service-name>
 ---
 
 # Service Testing

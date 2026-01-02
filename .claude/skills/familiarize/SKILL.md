@@ -1,7 +1,6 @@
 ---
 name: familiarize
 description: Scan and document the entire system, creating inventory, management scripts, and configuration
-args: [--quick]
 ---
 
 # System Familiarization

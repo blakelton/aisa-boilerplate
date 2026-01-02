@@ -47,7 +47,7 @@ fi
 
 # Create directory structure
 print_info "Creating directory structure..."
-mkdir -p "$INSTALL_DIR"/{.claude/{skills,scripts,agents,logs,backups},servers,reports,templates}
+mkdir -p "$INSTALL_DIR"/{.claude/{scripts,agents,logs,backups},servers,reports,templates}
 
 # Get the script's directory (where the boilerplate files are)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -63,12 +63,13 @@ cp "$SCRIPT_DIR/system-inventory.json" "$INSTALL_DIR/"
 cp "$SCRIPT_DIR/.claude/settings.local.json" "$INSTALL_DIR/.claude/"
 cp "$SCRIPT_DIR/.claude/system-changes.log" "$INSTALL_DIR/.claude/"
 
-# Skills
-cp "$SCRIPT_DIR/.claude/skills/"*.skill "$INSTALL_DIR/.claude/skills/"
+# Skills (new structure: each skill is a directory with SKILL.md)
+print_info "Installing skills..."
+cp -r "$SCRIPT_DIR/.claude/skills" "$INSTALL_DIR/.claude/"
 
 # Agents
 if [ -d "$SCRIPT_DIR/.claude/agents" ]; then
-    cp "$SCRIPT_DIR/.claude/agents/"* "$INSTALL_DIR/.claude/agents/" 2>/dev/null || true
+    cp -r "$SCRIPT_DIR/.claude/agents/"* "$INSTALL_DIR/.claude/agents/" 2>/dev/null || true
 fi
 
 # Templates
@@ -81,7 +82,7 @@ print_info "Setting permissions..."
 chmod 755 "$INSTALL_DIR"
 chmod 644 "$INSTALL_DIR/.claude_instructions"
 chmod 644 "$INSTALL_DIR/system-inventory.json"
-chmod 644 "$INSTALL_DIR/.claude/skills/"*.skill
+find "$INSTALL_DIR/.claude/skills" -name "SKILL.md" -exec chmod 644 {} \;
 chmod 755 "$INSTALL_DIR/.claude/logs"
 chmod 755 "$INSTALL_DIR/.claude/backups"
 

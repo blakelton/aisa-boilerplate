@@ -1,7 +1,6 @@
 ---
 name: install-app
 description: Plan and install new applications on the system
-args: <application-name> [additional-requirements]
 ---
 
 # Application Installation

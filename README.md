@@ -7,7 +7,7 @@ A professional, system-agnostic framework for AI-assisted Linux system administr
 AISA (AI System Administrator) provides a structured approach to managing Linux servers with AI assistance. It includes:
 
 - **Automated System Discovery** - Scan and document your entire system
-- **20 Slash Commands** - Common sysadmin tasks at your fingertips
+- **21 Slash Commands** - Common sysadmin tasks at your fingertips
 - **Change Management** - Comprehensive logging of all changes
 - **Service Management** - Auto-generated scripts for each service
 - **Security Auditing** - Built-in security checks
@@ -104,9 +104,11 @@ aisa/
 │   ├── settings.local.json   # Permissions configuration
 │   ├── system-changes.log    # Change tracking history
 │   ├── skills/               # Slash command definitions
-│   │   ├── familiarize.skill
-│   │   ├── monitor-system.skill
-│   │   └── ... (20 skills)
+│   │   ├── familiarize/
+│   │   │   └── SKILL.md
+│   │   ├── monitor-system/
+│   │   │   └── SKILL.md
+│   │   └── ... (21 skills)
 │   ├── agents/               # Agent workflow definitions
 │   ├── scripts/              # Utility scripts
 │   ├── logs/                 # Operation logs
@@ -159,19 +161,35 @@ For each discovered service, AISA creates:
 
 ### Adding Custom Skills
 
-Create a new `.skill` file in `.claude/skills/`:
+Create a new directory in `.claude/skills/` with a `SKILL.md` file:
 
-```yaml
+```bash
+mkdir -p .claude/skills/my-custom-command
+```
+
+Then create `.claude/skills/my-custom-command/SKILL.md`:
+
+```markdown
 ---
 name: my-custom-command
 description: What this command does
-args: <required-arg> [optional-arg]
 ---
 
 # My Custom Command
 
 Instructions for Claude to follow when this command is invoked.
+
+## Usage
+
+/my-custom-command <required-arg> [optional-arg]
+
+## Process
+
+1. Step one
+2. Step two
 ```
+
+**Note**: The skill file MUST be named exactly `SKILL.md` (case-sensitive) inside its own directory.
 
 ### Modifying Permissions
 
@@ -209,11 +227,14 @@ AISA works on any Linux system with:
 ### Skills Not Loading
 
 ```bash
-# Check skill files exist and are readable
-ls -la .claude/skills/
+# Check skill directories exist with SKILL.md files
+ls -la .claude/skills/*/SKILL.md
 
 # Verify skill file format (YAML frontmatter)
-head -10 .claude/skills/familiarize.skill
+head -10 .claude/skills/familiarize/SKILL.md
+
+# Skills require Claude Code restart to load
+# Close and reopen Claude Code after adding new skills
 ```
 
 ### Permission Errors

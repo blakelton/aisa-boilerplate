@@ -1,7 +1,6 @@
 ---
 name: create-server-scripts
 description: Generate management scripts for a service
-args: <service-name> [--type systemd|docker|compose]
 ---
 
 # Server Script Generator

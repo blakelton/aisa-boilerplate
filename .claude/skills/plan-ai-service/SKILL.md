@@ -1,7 +1,6 @@
 ---
 name: plan-ai-service
 description: Plan deployment of AI/ML services
-args: <ai-service-type> [requirements]
 ---
 
 # AI/ML Service Deployment Planning

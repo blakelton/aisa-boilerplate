@@ -1,7 +1,6 @@
 ---
 name: update-inventory
 description: Update the system inventory documentation with current system state
-args: [--section <section>]
 ---
 
 # Update System Inventory

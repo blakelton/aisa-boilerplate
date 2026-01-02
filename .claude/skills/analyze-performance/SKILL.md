@@ -1,7 +1,6 @@
 ---
 name: analyze-performance
 description: Analyze system and service performance bottlenecks
-args: [optional: service-name or 'system']
 ---
 
 # Performance Analysis

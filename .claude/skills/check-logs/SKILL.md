@@ -1,7 +1,6 @@
 ---
 name: check-logs
 description: Analyze system and service logs for errors and warnings
-args: [service-name or 'system']
 ---
 
 # Log Analysis

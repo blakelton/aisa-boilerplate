@@ -1,7 +1,6 @@
 ---
 name: restart-service
 description: Safely restart a service with pre/post checks and validation
-args: <service-name>
 ---
 
 # Safe Service Restart

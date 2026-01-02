@@ -1,7 +1,6 @@
 ---
 name: troubleshoot-system
 description: Perform root cause analysis for system-wide issues
-args: [optional issue description]
 ---
 
 # System Troubleshooting

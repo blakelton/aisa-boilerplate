@@ -1,7 +1,6 @@
 ---
 name: monitor-service
 description: Monitor a specific service in detail
-args: <service-name>
 ---
 
 # Service Monitor

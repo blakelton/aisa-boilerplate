@@ -1,7 +1,6 @@
 ---
 name: view-changelog
 description: View recent system changes and troubleshooting history
-args: [optional: number of entries, default 10]
 ---
 
 # View Change Log

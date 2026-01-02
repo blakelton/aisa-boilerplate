@@ -1,7 +1,6 @@
 ---
 name: troubleshoot-service
 description: Root cause analysis for a specific service or application
-args: <service-name>
 ---
 
 # Service Troubleshooting

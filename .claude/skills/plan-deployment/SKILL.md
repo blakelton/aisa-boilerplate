@@ -1,7 +1,6 @@
 ---
 name: plan-deployment
 description: Plan deployment of new software systems
-args: <system-name> [requirements]
 ---
 
 # Deployment Planning

@@ -1,7 +1,6 @@
 ---
 name: backup-config
 description: Backup critical configuration files
-args: [optional: specific config or 'all']
 ---
 
 # Configuration Backup
