@@ -1,0 +1,78 @@
+---
+name: optimize-service
+description: Optimize service configuration and performance
+args: <service-name>
+---
+
+# Service Optimization
+
+I'll analyze the specified service and provide optimization recommendations.
+
+## Optimization Areas
+
+### 1. Resource Allocation
+- Memory limits and caching
+- CPU affinity/limits
+- Connection pool sizes
+- Worker/thread counts
+
+### 2. Configuration Tuning
+- Service-specific optimizations
+- Buffer sizes
+- Timeout values
+- Compression settings
+
+### 3. Caching
+- In-memory caching
+- Disk caching
+- CDN/proxy caching
+- Query result caching
+
+### 4. Database Optimization
+- Query optimization
+- Index recommendations
+- Connection pooling
+- Vacuum/maintenance
+
+### 5. Network Optimization
+- Keep-alive settings
+- TCP tuning
+- HTTP/2 enablement
+- Compression
+
+## Common Optimizations by Service
+
+### Nginx
+- Worker processes = CPU cores
+- Worker connections
+- Gzip compression
+- FastCGI caching
+- Buffer sizes
+
+### PostgreSQL
+- shared_buffers
+- work_mem
+- maintenance_work_mem
+- effective_cache_size
+
+### Docker
+- Memory limits
+- CPU limits
+- Storage driver
+- Network mode
+
+### Redis
+- maxmemory
+- maxmemory-policy
+- Persistence settings
+
+## Analysis Process
+
+1. **Current State** - Document current configuration
+2. **Benchmark** - Measure current performance
+3. **Identify Bottlenecks** - Find limiting factors
+4. **Recommend Changes** - Specific optimizations
+5. **Test & Validate** - Verify improvements
+6. **Document** - Log changes
+
+Let me analyze and optimize the service...

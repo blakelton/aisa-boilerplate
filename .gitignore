@@ -1,0 +1,38 @@
+# AISA - Files to ignore in git
+
+# Logs (keep structure, ignore contents)
+.claude/logs/*
+!.claude/logs/.gitkeep
+
+# Backups (keep structure, ignore contents)
+.claude/backups/*
+!.claude/backups/.gitkeep
+
+# Reports (keep structure, ignore contents)
+reports/*
+!reports/.gitkeep
+
+# Auto-generated server scripts (these are system-specific)
+# Uncomment if you want to track them:
+# servers/*/
+
+# System-specific files
+# Note: system-inventory.json is tracked as a template
+# After /familiarize runs, it becomes system-specific
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-*
+
+# Temporary files
+*.tmp
+*.temp
+*.bak

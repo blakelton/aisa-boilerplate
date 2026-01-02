@@ -1,0 +1,66 @@
+---
+name: troubleshoot-service
+description: Root cause analysis for a specific service or application
+args: <service-name>
+---
+
+# Service Troubleshooting
+
+I'll perform detailed root cause analysis for the specified service.
+
+## Troubleshooting Process
+
+### Step 1: Identify Service Type
+- Systemd service
+- Docker container
+- LXD container
+- Application process
+
+### Step 2: Check Current Status
+```bash
+# Systemd
+systemctl status <service>
+journalctl -u <service> --since "1 hour ago"
+
+# Docker
+docker inspect <container>
+docker logs --tail 100 <container>
+
+# Process
+ps aux | grep <process>
+```
+
+### Step 3: Analyze Logs
+- Recent error messages
+- Warning patterns
+- Stack traces
+- Connection failures
+
+### Step 4: Check Dependencies
+- Database connectivity
+- Network dependencies
+- File permissions
+- Required services
+
+### Step 5: Resource Analysis
+- Memory usage
+- CPU consumption
+- Open files/connections
+- Disk I/O
+
+### Step 6: Configuration Review
+- Recent config changes
+- Syntax validation
+- Permission issues
+- Environment variables
+
+## Common Issues
+
+| Symptom | Likely Causes |
+|---------|---------------|
+| Won't start | Config error, missing dependency, port conflict |
+| Crashes repeatedly | Memory leak, OOM, bad config |
+| Slow response | Resource exhaustion, DB issues, network |
+| Connection refused | Not running, firewall, wrong port |
+
+Let me analyze the service...

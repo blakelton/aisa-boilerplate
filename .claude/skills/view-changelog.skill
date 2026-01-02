@@ -1,0 +1,34 @@
+---
+name: view-changelog
+description: View recent system changes and troubleshooting history
+args: [optional: number of entries, default 10]
+---
+
+# View Change Log
+
+I'll display recent entries from the system change log.
+
+## Change Log Location
+
+`.claude/system-changes.log`
+
+## What's Shown
+
+Each entry includes:
+- **Timestamp** - When the change was made
+- **Action Type** - Installation, Configuration, Troubleshooting, etc.
+- **Operator** - Who made the change (Claude or user)
+- **Summary** - Brief description
+- **Details** - Commands run, files modified
+- **Impact** - What changed as a result
+- **Rollback** - How to undo if needed
+
+## Usage
+
+```
+/view-changelog        # Last 10 entries
+/view-changelog 5      # Last 5 entries
+/view-changelog 20     # Last 20 entries
+```
+
+Let me retrieve the recent changes...

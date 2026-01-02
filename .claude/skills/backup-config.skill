@@ -1,0 +1,72 @@
+---
+name: backup-config
+description: Backup critical configuration files
+args: [optional: specific config or 'all']
+---
+
+# Configuration Backup
+
+I'll backup critical configuration files to protect against accidental changes.
+
+## What Gets Backed Up
+
+### System Configuration
+- `/etc/nginx/` - Web server config
+- `/etc/apache2/` - Apache config (if present)
+- `/etc/ssh/sshd_config` - SSH configuration
+- `/etc/fail2ban/` - Fail2ban rules
+- `/etc/ufw/` - Firewall rules
+- `/etc/systemd/system/` - Custom services
+
+### Service Configuration
+- Database configs
+- Application configs
+- Docker compose files
+- Environment files
+
+### AISA Configuration
+- `system-inventory.json`
+- `.claude_instructions`
+- `.claude/system-changes.log`
+- `.claude/settings.local.json`
+
+## Backup Location
+
+`~/.aisa-backups/` or `.claude/backups/`
+
+## Backup Format
+
+```
+backups/
+├── YYYY-MM-DD_HHMMSS/
+│   ├── etc/
+│   │   ├── nginx/
+│   │   └── ...
+│   ├── services/
+│   └── aisa/
+└── manifest.txt
+```
+
+## Backup Process
+
+1. Create timestamped backup directory
+2. Copy configuration files
+3. Create manifest of backed up files
+4. Compress backup
+5. Log to system-changes.log
+6. Rotate old backups (keep last 5)
+
+## Restore Process
+
+```bash
+# List backups
+ls -la .claude/backups/
+
+# Restore specific file
+cp .claude/backups/<date>/etc/nginx/nginx.conf /etc/nginx/nginx.conf
+
+# Restore all (with caution)
+# cp -r .claude/backups/<date>/etc/* /etc/
+```
+
+Let me backup the configurations...

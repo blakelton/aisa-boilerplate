@@ -1,0 +1,138 @@
+# {{SERVICE_NAME}}
+
+{{SERVICE_DESCRIPTION}}
+
+## Quick Reference
+
+| Property | Value |
+|----------|-------|
+| **Type** | {{SERVICE_TYPE}} |
+| **Port(s)** | {{PORTS}} |
+| **Status** | {{STATUS}} |
+| **Config Location** | {{CONFIG_PATH}} |
+| **Data Location** | {{DATA_PATH}} |
+| **Logs** | {{LOG_LOCATION}} |
+
+## Management
+
+### Quick Commands
+
+```bash
+# Check status
+./check-{{SERVICE_NAME}}.sh
+
+# View detailed status
+./{{SERVICE_NAME}}.sh status
+
+# Start/Stop/Restart
+./{{SERVICE_NAME}}.sh start
+./{{SERVICE_NAME}}.sh stop
+./{{SERVICE_NAME}}.sh restart
+
+# View logs
+./{{SERVICE_NAME}}.sh logs
+```
+
+### Health Check
+
+```bash
+./check-{{SERVICE_NAME}}.sh
+```
+
+This checks:
+- Service/container running status
+- Resource usage (CPU, memory)
+- Recent errors in logs
+- Port availability
+- API health (if applicable)
+
+## Configuration
+
+### Main Configuration
+- **Location**: {{CONFIG_PATH}}
+- **Key settings**: (document important settings here)
+
+### Environment Variables
+(List any environment variables if applicable)
+
+## Troubleshooting
+
+### Service Won't Start
+
+1. Check logs:
+   ```bash
+   ./{{SERVICE_NAME}}.sh logs
+   # or
+   journalctl -u {{SERVICE_UNIT}} -f
+   ```
+
+2. Check configuration:
+   ```bash
+   {{CONFIG_TEST_COMMAND}}
+   ```
+
+3. Check resource availability:
+   ```bash
+   df -h  # Disk space
+   free -h  # Memory
+   ```
+
+### High Resource Usage
+
+1. Check current usage:
+   ```bash
+   ./check-{{SERVICE_NAME}}.sh
+   ```
+
+2. Review recent activity in logs
+
+3. Consider resource limits or optimization
+
+### Connection Issues
+
+1. Verify service is listening:
+   ```bash
+   ss -tuln | grep {{PORT}}
+   ```
+
+2. Check firewall:
+   ```bash
+   sudo ufw status
+   ```
+
+3. Test connectivity:
+   ```bash
+   curl http://localhost:{{PORT}}/
+   ```
+
+## Backup
+
+### What to Backup
+- Configuration: {{CONFIG_PATH}}
+- Data: {{DATA_PATH}}
+
+### Backup Command
+```bash
+# Example backup
+tar -czf {{SERVICE_NAME}}-backup-$(date +%Y%m%d).tar.gz {{CONFIG_PATH}} {{DATA_PATH}}
+```
+
+## Updates
+
+### Update Procedure
+
+1. Check current version
+2. Review changelog/release notes
+3. Create backup
+4. Perform update:
+   ```bash
+   ./{{SERVICE_NAME}}.sh update
+   ```
+5. Verify service health
+6. Document in change log
+
+## Related Resources
+
+- **System Inventory**: `../../system-inventory.json`
+- **Change Log**: `../../.claude/system-changes.log`
+- **Official Documentation**: {{DOCS_URL}}

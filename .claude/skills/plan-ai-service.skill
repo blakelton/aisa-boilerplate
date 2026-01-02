@@ -1,0 +1,87 @@
+---
+name: plan-ai-service
+description: Plan deployment of AI/ML services
+args: <ai-service-type> [requirements]
+---
+
+# AI/ML Service Deployment Planning
+
+I'll create a deployment plan for the requested AI/ML service.
+
+## Common AI/ML Services
+
+| Service | Purpose | Resources |
+|---------|---------|-----------|
+| Ollama | Local LLM hosting | GPU/CPU, 8GB+ RAM |
+| Open WebUI | LLM chat interface | 2GB RAM, with Ollama |
+| LocalAI | OpenAI-compatible API | GPU/CPU, 8GB+ RAM |
+| Stable Diffusion | Image generation | GPU, 12GB+ VRAM |
+| Whisper | Speech-to-text | GPU/CPU, 4GB+ RAM |
+| ComfyUI | AI image workflow | GPU, 8GB+ VRAM |
+
+## Planning Considerations
+
+### Hardware Requirements
+- **GPU**: Check for NVIDIA/AMD GPU availability
+- **VRAM**: Most models need 4-24GB VRAM
+- **RAM**: System RAM for loading/caching
+- **Storage**: Models can be 4-100GB+ each
+
+### Software Requirements
+- NVIDIA drivers and CUDA (for NVIDIA GPUs)
+- ROCm (for AMD GPUs)
+- Docker with GPU support
+- Container runtime
+
+### Model Selection
+- Model size vs accuracy tradeoff
+- Quantization options (Q4, Q5, Q8, FP16)
+- Task-specific models
+
+### Integration
+- API endpoint configuration
+- Reverse proxy setup
+- Authentication
+- Rate limiting
+
+## GPU Detection Commands
+
+```bash
+# NVIDIA
+nvidia-smi
+nvcc --version
+
+# AMD
+rocminfo
+
+# Check GPU passthrough for Docker
+docker run --rm --gpus all nvidia/cuda:12.0-base nvidia-smi
+```
+
+## Deployment Options
+
+### 1. Native Installation
+- Direct on host
+- Best performance
+- System dependencies
+
+### 2. Docker Container
+- Isolated environment
+- Easy updates
+- GPU passthrough needed
+
+### 3. Docker Compose Stack
+- Multi-service (LLM + UI + DB)
+- Defined networking
+- Volume management
+
+## Resource Planning Output
+
+```
+GPU: [Model] with [VRAM]GB
+RAM: [Minimum]GB required, [Recommended]GB recommended
+Storage: [Size]GB for models
+Network: Port [PORT] for API
+```
+
+Let me plan the AI service deployment...

@@ -1,0 +1,53 @@
+---
+name: monitor-service
+description: Monitor a specific service in detail
+args: <service-name>
+---
+
+# Service Monitor
+
+I'll perform detailed monitoring of the specified service.
+
+## Monitoring Details
+
+For the requested service, I will check:
+
+1. **Status**
+   - Running state
+   - Uptime
+   - Restart count
+
+2. **Resources**
+   - CPU usage
+   - Memory consumption
+   - Open file descriptors
+
+3. **Network**
+   - Listening ports
+   - Active connections
+   - Network I/O
+
+4. **Logs**
+   - Recent log entries
+   - Error patterns
+   - Warning signs
+
+5. **Configuration**
+   - Config file locations
+   - Key settings
+   - Recent changes
+
+6. **Dependencies**
+   - Required services
+   - Database connections
+   - External APIs
+
+## Process
+
+1. Identify service type (systemd, Docker, etc.)
+2. Run appropriate health check script if available
+3. Gather detailed metrics
+4. Analyze logs for issues
+5. Report findings
+
+Let me analyze the service...

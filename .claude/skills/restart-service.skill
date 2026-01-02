@@ -1,0 +1,51 @@
+---
+name: restart-service
+description: Safely restart a service with pre/post checks and validation
+args: <service-name>
+---
+
+# Safe Service Restart
+
+I'll restart the specified service with proper checks before and after.
+
+## Restart Process
+
+### Pre-Restart Checks
+1. Verify service exists and is currently running
+2. Check for active connections/sessions
+3. Verify no dependent services will be affected
+4. Note current resource usage for comparison
+
+### Restart Execution
+1. Use graceful restart if available
+2. Monitor for errors during restart
+3. Wait for service to be fully operational
+
+### Post-Restart Validation
+1. Verify service is running
+2. Check health endpoint (if applicable)
+3. Verify listening ports
+4. Compare resource usage
+5. Check logs for errors
+
+### Documentation
+- Log restart to system-changes.log
+- Note any issues encountered
+
+## Service Types Handled
+
+| Type | Restart Method |
+|------|----------------|
+| Systemd | `systemctl restart` |
+| Docker | `docker restart` |
+| Docker Compose | `docker compose restart` |
+| LXD | `lxc restart` |
+
+## Safety Measures
+
+- **Graceful first**: Try graceful restart before hard restart
+- **Timeout**: Set reasonable timeouts
+- **Rollback**: Be ready to investigate if restart fails
+- **Notification**: Warn about potential brief downtime
+
+Let me restart the service safely...

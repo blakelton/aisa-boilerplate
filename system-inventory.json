@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "generated_at": null,
+    "hostname": null,
+    "generated_by": "AISA System Discovery",
+    "version": "1.0",
+    "note": "Run /familiarize to populate this file with system information"
+  },
+  "hardware": {
+    "cpu": {},
+    "memory": {},
+    "storage": {},
+    "gpu": {},
+    "sensors": {}
+  },
+  "operating_system": {
+    "distribution": null,
+    "version": null,
+    "kernel": null,
+    "architecture": null
+  },
+  "network": {
+    "hostname": null,
+    "primary_ip": null,
+    "interfaces": [],
+    "routing": [],
+    "listening_ports": []
+  },
+  "services": {
+    "web_servers": {},
+    "databases": {},
+    "ai_ml_services": {},
+    "application_servers": {},
+    "mail_services": {},
+    "infrastructure_services": {}
+  },
+  "containerization": {
+    "docker": {
+      "installed": false,
+      "containers": [],
+      "networks": [],
+      "volumes": []
+    },
+    "podman": {
+      "installed": false,
+      "containers": []
+    },
+    "lxd": {
+      "installed": false,
+      "containers": []
+    }
+  },
+  "websites": [],
+  "security": {
+    "ssl_certificates": [],
+    "firewall": {},
+    "fail2ban": {}
+  },
+  "management_scripts": {}
+}

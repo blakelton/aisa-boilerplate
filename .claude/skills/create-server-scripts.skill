@@ -1,0 +1,86 @@
+---
+name: create-server-scripts
+description: Generate management scripts for a service
+args: <service-name> [--type systemd|docker|compose]
+---
+
+# Server Script Generator
+
+I'll generate management and health check scripts for the specified service.
+
+## What Gets Created
+
+### Directory Structure
+```
+servers/<service-name>/
+├── README.md              - Service documentation
+├── check-<service>.sh     - Health check script
+└── <service>.sh           - Management script (if applicable)
+```
+
+### Health Check Script
+Checks:
+- Service/container running status
+- Resource usage
+- Port availability
+- API health (if applicable)
+- Recent log errors
+
+### Management Script
+Commands:
+- status - Show current status
+- start - Start the service
+- stop - Stop the service
+- restart - Restart the service
+- logs - View/follow logs
+- update - Update the service
+
+### README Documentation
+- Service description
+- Quick reference table
+- Management commands
+- Configuration locations
+- Troubleshooting tips
+
+## Service Types
+
+### Systemd Service
+```bash
+# Detection
+systemctl is-active <service>
+
+# Scripts generated
+check-<service>.sh - Uses systemctl status
+<service>.sh - Uses systemctl commands
+```
+
+### Docker Container
+```bash
+# Detection
+docker ps --format '{{.Names}}' | grep <container>
+
+# Scripts generated
+check-<service>.sh - Uses docker inspect
+<service>.sh - Uses docker commands
+```
+
+### Docker Compose
+```bash
+# Detection
+Find docker-compose.yml in /opt or service directory
+
+# Scripts generated
+check-<service>.sh - Uses docker compose ps
+<service>.sh - Uses docker compose commands
+```
+
+## Process
+
+1. Detect service type (systemd, docker, compose)
+2. Gather service details (ports, paths, etc.)
+3. Generate scripts from templates
+4. Make scripts executable
+5. Update system-inventory.json
+6. Log to system-changes.log
+
+Let me create the server scripts...

@@ -1,0 +1,80 @@
+---
+name: analyze-performance
+description: Analyze system and service performance bottlenecks
+args: [optional: service-name or 'system']
+---
+
+# Performance Analysis
+
+I'll identify performance bottlenecks and provide optimization recommendations.
+
+## Analysis Areas
+
+### CPU Performance
+- Load average trends
+- Per-core utilization
+- Process CPU consumption
+- Context switches
+- CPU wait states
+
+### Memory Performance
+- Memory pressure
+- Swap usage patterns
+- Cache efficiency
+- Memory leaks
+
+### Disk I/O
+- Read/write throughput
+- IOPS
+- I/O wait time
+- Queue depth
+
+### Network Performance
+- Bandwidth utilization
+- Connection counts
+- Latency
+- Packet loss/errors
+
+### Application Performance
+- Response times
+- Queue depths
+- Connection pools
+- Cache hit rates
+
+## Commands
+
+```bash
+# CPU analysis
+top -bn1
+mpstat -P ALL 1 5
+vmstat 1 5
+
+# Memory analysis
+free -h
+vmstat -s
+cat /proc/meminfo
+
+# Disk I/O
+iostat -xz 1 5
+iotop -b -n 3
+
+# Network
+sar -n DEV 1 5
+ss -s
+netstat -i
+
+# Process analysis
+ps aux --sort=-%cpu | head -10
+ps aux --sort=-%mem | head -10
+```
+
+## Performance Thresholds
+
+| Metric | Normal | Warning | Critical |
+|--------|--------|---------|----------|
+| CPU Usage | <70% | 70-90% | >90% |
+| Memory | <80% | 80-95% | >95% |
+| Disk I/O Wait | <10% | 10-30% | >30% |
+| Load Average | <cores | cores-2x | >2x cores |
+
+Let me analyze performance...

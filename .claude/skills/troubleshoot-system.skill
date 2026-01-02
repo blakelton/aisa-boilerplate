@@ -1,0 +1,66 @@
+---
+name: troubleshoot-system
+description: Perform root cause analysis for system-wide issues
+args: [optional issue description]
+---
+
+# System Troubleshooting
+
+I'll perform comprehensive root cause analysis to identify and diagnose system-wide issues.
+
+## Troubleshooting Process
+
+### Phase 1: Gather Information
+1. Review recent change log entries
+2. Check system resource usage
+3. Review system logs for errors
+4. Check service statuses
+
+### Phase 2: Identify Symptoms
+- High CPU/memory usage?
+- Disk space issues?
+- Network connectivity problems?
+- Service failures?
+- Performance degradation?
+
+### Phase 3: Root Cause Analysis
+1. Correlate timing of issues with changes
+2. Trace error messages to source
+3. Check dependencies and cascading failures
+4. Analyze resource contention
+
+### Phase 4: Document & Recommend
+1. Document findings
+2. Propose solutions
+3. Plan rollback if needed
+4. Log to change log
+
+## Commands Used
+
+```bash
+# Recent system errors
+journalctl -p err --since "24 hours ago" --no-pager
+
+# System load history (if sysstat installed)
+sar -u 1 5
+
+# Memory pressure
+cat /proc/meminfo
+dmesg | grep -i "out of memory"
+
+# Disk issues
+dmesg | grep -i "error\|fail\|i/o"
+df -h
+
+# Network issues
+dmesg | grep -i "network\|eth\|link"
+ip -s link
+
+# OOM killer
+dmesg | grep -i "killed process"
+
+# Failed services
+systemctl --failed
+```
+
+Let me begin the troubleshooting analysis...

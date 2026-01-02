@@ -1,0 +1,92 @@
+---
+name: generate-report
+description: Generate comprehensive system status report
+args: [optional: report-type - full, summary, security, performance]
+---
+
+# System Report Generator
+
+I'll generate a comprehensive status report for the system.
+
+## Report Types
+
+### Full Report
+Complete system documentation including:
+- Hardware status
+- All services
+- Security audit
+- Performance metrics
+- Recent changes
+- Recommendations
+
+### Summary Report
+Quick overview:
+- System health score
+- Critical issues
+- Resource usage
+- Service status
+
+### Security Report
+Security-focused:
+- SSL certificate status
+- Failed login attempts
+- Firewall status
+- Pending updates
+- Vulnerability assessment
+
+### Performance Report
+Performance analysis:
+- Resource utilization
+- Bottleneck identification
+- Trend analysis
+- Optimization recommendations
+
+## Report Sections
+
+### 1. Executive Summary
+- Overall system health
+- Critical issues requiring attention
+- Key metrics
+
+### 2. Hardware Status
+- CPU, memory, disk usage
+- Hardware health (temps, SMART)
+- GPU status (if present)
+
+### 3. Services Status
+- All monitored services
+- Health check results
+- Uptime statistics
+
+### 4. Security Status
+- SSL certificates
+- Firewall rules
+- Recent security events
+- Update status
+
+### 5. Performance Metrics
+- Response times
+- Resource trends
+- Capacity planning
+
+### 6. Recent Changes
+- Last 10 change log entries
+- Impact summary
+
+### 7. Recommendations
+- Immediate actions needed
+- Suggested improvements
+- Maintenance tasks
+
+## Output Format
+
+Reports are saved to `reports/` directory as Markdown files.
+
+```
+reports/
+├── system-report-YYYY-MM-DD.md
+├── security-report-YYYY-MM-DD.md
+└── performance-report-YYYY-MM-DD.md
+```
+
+Let me generate the report...
