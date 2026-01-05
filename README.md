@@ -19,13 +19,13 @@ AISA (AI System Administrator) provides a structured approach to managing Linux 
 
 ```bash
 # Clone or copy this repository
-git clone <your-repo-url> ~/projects/aisa-boilerplate
+git clone git@github.com:blakelton/aisa-boilerplate.git ~/projects/aisa
 
 # Run the installer
-cd ~/projects/aisa-boilerplate
+cd ~/projects/aisa
 ./install.sh ~/projects/aisa
 
-# Or install to default location
+# Or install to the default location
 ./install.sh
 ```
 
